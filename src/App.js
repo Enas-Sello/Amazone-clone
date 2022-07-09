@@ -1,18 +1,21 @@
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-
-
-
-function App ()
-{
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import Nav from './Components/Nav';
+import './index.css';
+import Home from './pages/Home';
+import ProductDetails from './pages/ProductDetails';
+function App() {
   return (
-    <div>
-      <header>
-        <a href=''>amazone</a>
-      </header>
-      <main>
-        
-      </main>
-    </div>
+    <Router>
+      <div>
+        <Nav />
+        <main>
+          <Routes>
+            <Route path="/product/:id" element={<ProductDetails />} />
+            <Route path="/" element={<Home />} />
+          </Routes>
+        </main>
+      </div>
+    </Router>
   );
 }
 
