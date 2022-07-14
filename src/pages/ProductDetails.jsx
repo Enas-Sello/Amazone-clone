@@ -8,9 +8,11 @@ function ProductDetails ()
 
   return (
       <div>
-          
+          {id}
     </div>
   )
 }
 
 export default ProductDetails
+
+

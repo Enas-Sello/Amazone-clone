@@ -1,3 +1,4 @@
+import { Container } from 'react-bootstrap';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Nav from './Components/Nav';
 import './index.css';
@@ -9,10 +10,12 @@ function App() {
       <div>
         <Nav />
         <main>
-          <Routes>
-            <Route path="/product/:id" element={<ProductDetails />} />
-            <Route path="/" element={<Home />} />
-          </Routes>
+          <Container>
+            <Routes>
+              <Route path="/product/:id" element={<ProductDetails />} />
+              <Route path="/" element={<Home />} />
+            </Routes>
+          </Container>
         </main>
       </div>
     </Router>
