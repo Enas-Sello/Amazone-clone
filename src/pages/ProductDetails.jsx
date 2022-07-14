@@ -7,7 +7,9 @@ function ProductDetails ()
     const {id} = params
 
   return (
-    <div>{id}</div>
+      <div>
+          
+    </div>
   )
 }
 

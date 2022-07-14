@@ -1,17 +1,26 @@
 import axios from 'axios';
-import React, { useState } from 'react'
+import React, { useState } from 'react';
 import { useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import data from '../data';
+// import data from '../data';
 
-function Home ()
-{
-    
-    const [ products, setproduct ] = useState( [] )
+function Home() {
+  const [products, setproduct] = useState([]);
     useEffect( () =>
     {
-        axios.get('https://fakestoreapi.com/products').then((res)=>{setproduct(res.data);}).catch((err)=>{console.log(err)});
-    },[])
+        const fetchData = async () =>
+        {
+          const result = await
+          axios
+          .get('https://fakestoreapi.com/products')
+          .then((res) => {
+              setproduct(res.data);
+            })
+            .catch((err) => {
+                console.log(err);
+            });
+        }
+  }, []);
   return (
     <>
       <h1>Feather Products</h1>
@@ -39,4 +48,4 @@ function Home ()
   );
 }
 
-export default Home
+export default Home;
