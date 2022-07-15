@@ -4,7 +4,7 @@ const reducer = (state, action) => {
     case 'FETCH-REQUEST':
       return { ...state, loading: true };
     case 'FETCH-SUCESS':
-      return { ...state, products: action.payload, loading: false };
+      return { ...state, data: action.payload, loading: false };
     case 'FEACH-FALE':
       return { ...state, loading: false, error: action.payload };
     default:
