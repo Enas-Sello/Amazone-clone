@@ -41,7 +41,7 @@ function Home() {
           <Row>
             {products.map((product) => (
               <Col key={product.id} sm={6} md={4} lg={3} className="mb-3 ">
-                <Card>
+                <Card className="product">
                   <Link to={`/product/${product.id}`}>
                     <img
                       style={{}}
@@ -62,7 +62,7 @@ function Home() {
                       <strong>${product.price}</strong>
                     </Card.Text>
                     <Button
-                      className="bg-warning text-dark"
+                      className="bg-warning text-dark mt-auto"
                       style={{ border: 'none', fontSize: '20px' }}
                     >
                       Add to Cart
