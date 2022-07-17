@@ -1,5 +1,5 @@
 import React, { useReducer, useEffect } from 'react';
-import  '../index.css';
+import '../index.css';
 import axiosInstance from '../network/axiosInstansce';
 import Loading from '../Components/Loading/Loading';
 import Error from '../Components/Error/Error';
@@ -72,6 +72,7 @@ function ProHome() {
                       ${product.price}
                     </Card.Text>
                     <Button
+                     
                       className="bg-warning text-dark mt-auto shadow-sm"
                       style={{ border: 'none', fontSize: '20px' }}
                     >
