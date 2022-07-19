@@ -1,27 +1,19 @@
-import React, { Component, useContext } from 'react';
-import { Badge } from 'react-bootstrap';
-import { Link } from 'react-router-dom';
-import { Store } from '../../../store/Store';
+import React from "react";
+import { Link } from "react-router-dom";
+import { useSelector } from "react-redux";
 
-const Cart = () => {
-    // const { state } = useContext(Store);
-    // const {cart}=state
-  return (
-    <>
-      <Link to="/CartPage" style={{ cursor: 'pointer' }}>
-        <i className="fa-brands fa-opencart fs-1 header-cart text-white">
-          {/* {cart.CartItems.length > 0 && (
-            <Badge pill bd="danger">
-              {cart.CartItems.length}
-            </Badge>
-          )} */}
-          <span className="cart-count ms-sm-1 me-3 font-monospace">0</span>
-        </i>
-      </Link>
-    </>
-  );
-};
+export default function Cart() {
+    const quantity = useSelector((state) => state.cart.quantity);
 
-export default Cart
-
-
+    return (
+        <>
+            <Link to="/CartPage" style={{ cursor: "pointer" }}>
+                <i className="fa-brands fa-opencart fs-1 header-cart text-white">
+                    <span className="cart-count ms-sm-1 me-3 font-monospace">
+                        {quantity}
+                    </span>
+                </i>
+            </Link>
+        </>
+    );
+}
